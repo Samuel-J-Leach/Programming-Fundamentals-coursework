@@ -8,19 +8,15 @@ package ProblemSet_2c;
  */
 
 public class Assessment {
-	
 	private String name;
 	private double mark;
-	
-	public Assessment (String Name, double Mark) {
-		name = Name;
-		mark = Mark;
+	public Assessment (String givenName, double givenMark) {
+		name = givenName;
+		mark = givenMark;
 	}
-	
 	public String getName() {
 		return name;
 	}
-	
 	public double getMark() {
 		return mark;
 	}
