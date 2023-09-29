@@ -11,10 +11,9 @@ public class Student {
 	private String forename = "";
 	private String surname = "";
 	private int age = 0;
-	public Student(String givenForename, 
-			String givenSurname, int givenAge) {
-		forename = givenForename;
-		surname = givenSurname;
+	public Student(String givenFn, String givenSn, int givenAge) {
+		forename = givenFn;
+		surname = givenSn;
 		age = givenAge;
 	}
 	public String getFullname() {

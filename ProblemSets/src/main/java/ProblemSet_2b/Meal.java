@@ -3,8 +3,8 @@
 package ProblemSet_2b;
 
 /*
- * a simple class that calculates the total sugar level 
- * of a meal (2 items of food)and returns a message 
+ * a simple class that calculates the total sugar level
+ * of a meal (2 items of food)and returns a message
  * containing the food names
  * @author Samuel Leach
  */
