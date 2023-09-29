@@ -11,7 +11,8 @@ public class Student {
 	private String forename = "";
 	private String surname = "";
 	private int age = 0;
-	public Student(String givenForename, String givenSurname, int givenAge) {
+	public Student(String givenForename, 
+			String givenSurname, int givenAge) {
 		forename = givenForename;
 		surname = givenSurname;
 		age = givenAge;
@@ -28,7 +29,7 @@ public class Student {
 	public int getAge() {
 		return age;
 	}
-	public void setAge(int Age) {
-		age = Age;
+	public void setAge(int newAge) {
+		age = newAge;
 	}
 }
