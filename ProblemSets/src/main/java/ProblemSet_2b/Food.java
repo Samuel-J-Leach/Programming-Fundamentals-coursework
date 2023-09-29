@@ -8,19 +8,15 @@ package ProblemSet_2b;
  */
 
 public class Food {
-	
 	private String name = "";
 	private double amountOfSugar = 0.0;
-	
-	public Food(String Name, double AmountOfSugar) {
-		name = Name;
-		amountOfSugar = AmountOfSugar;
+	public Food(String givenName, double givenAmountOfSugar) {
+		name = givenName;
+		amountOfSugar = givenAmountOfSugar;
 	}
-	
 	public String getName() {
 		return name;
 	}
-	
 	public double getAmountOfSugar() {
 		return amountOfSugar;
 	}

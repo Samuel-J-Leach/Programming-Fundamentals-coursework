@@ -8,33 +8,26 @@ package ProblemSet_2a;
  */
 
 public class Student {
-	
 	private String forename = "";
 	private String surname = "";
 	private int age = 0;
-	
-	public Student(String Forename, String Surname, int Age) {
-		forename = Forename;
-		surname = Surname;
-		age = Age;
+	public Student(String givenForename, String givenSurname, int givenAge) {
+		forename = givenForename;
+		surname = givenSurname;
+		age = givenAge;
 	}
-	
 	public String getFullname() {
 		return forename + " " + surname;
 	}
-	
-	public void setForename(String Forename) {
-		forename = Forename;
+	public void setForename(String newForename) {
+		forename = newForename;
 	}
-	
-	public void setSurname(String Surname) {
-		surname = Surname;
+	public void setSurname(String newSurname) {
+		surname = newSurname;
 	}
-	
 	public int getAge() {
 		return age;
 	}
-	
 	public void setAge(int Age) {
 		age = Age;
 	}
