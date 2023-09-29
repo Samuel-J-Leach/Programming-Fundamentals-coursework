@@ -10,7 +10,7 @@ package ProblemSet_2c;
 public class Assessment {
 	private String name;
 	private double mark;
-	public Assessment (String givenName, double givenMark) {
+	public Assessment(String givenName, double givenMark) {
 		name = givenName;
 		mark = givenMark;
 	}
