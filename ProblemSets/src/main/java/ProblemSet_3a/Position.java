@@ -7,7 +7,7 @@ package ProblemSet_3a;
  */
 
 public class Position {
-	public String roleName;
+	private String roleName;
 	public String getRoleName() {
 		return roleName;
 	}
