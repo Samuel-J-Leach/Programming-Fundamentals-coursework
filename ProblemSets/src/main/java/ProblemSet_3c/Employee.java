@@ -1,21 +1,19 @@
 package ProblemSet_3c;
 
-import ProblemSet_3a.Position;
-import ProblemSet_3b.AnnualSalary;
-
 public class Employee {
 	private int id;
 	private String forename;
 	private String surname;
-	private AnnualSalary salary;
-	private Position positionName;
+	private ProblemSet_3b.AnnualSalary salary;
+	private ProblemSet_3a.Position positionName;
 	public Employee(int pId, String pFn, String pSn,
-			AnnualSalary pS, Position pPn) {
+			ProblemSet_3b.AnnualSalary salary2,
+			ProblemSet_3a.Position companyPosition) {
 		id = pId;
 		forename = pFn;
 		surname = pSn;
-		salary = pS;
-		positionName = pPn;
+		salary = salary2;
+		positionName = companyPosition;
 	}
 	public int getId() {
 		return id;
