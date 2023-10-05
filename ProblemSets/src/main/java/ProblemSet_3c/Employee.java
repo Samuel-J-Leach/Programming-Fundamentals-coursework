@@ -6,7 +6,7 @@ public class Employee {
 	private String surname;
 	private AnnualSalary salary;
 	private Position positionName;
-	private Employee(int pId, String pFn, String pSn,
+	public Employee(int pId, String pFn, String pSn,
 			AnnualSalary salary2,
 			Position companyPosition) {
 		id = pId;
