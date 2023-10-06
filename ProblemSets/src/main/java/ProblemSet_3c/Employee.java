@@ -38,9 +38,12 @@ public class Employee {
 		if (tempSalary < 100000) {
 			bonus = " not";
 		}
-		String msg = surname + ", " + forename + " (" + id + "): "
-				+ roleName + " at �" + tempSalary + " (�" + tax + " tax)"
-						+ " and is" + bonus + " eligible for bonus.";
+		String msg = surname + ", " + forename
+				+ " (" + id + "): "
+				+ roleName + " at �" + tempSalary
+				+ " (�" + tax + " tax)"
+				+ " and is" + bonus
+				+ " eligible for bonus.";
 		System.out.println(msg);
 		return msg;
 	}
