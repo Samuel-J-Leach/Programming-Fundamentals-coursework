@@ -9,7 +9,8 @@ public class Day {
 	public String getName() {
 		return name;
 	}
-	public void setSession(int index, String moduleName, int startTime, int endTime) {
+	public void setSession(int index, String moduleName,
+			int startTime, int endTime) {
 		sessions[index] = new Session(moduleName, startTime, endTime);
 	}
 	public Session getSessions(int index) {
@@ -18,15 +19,14 @@ public class Day {
 	public String toString() {
 		String msg = "";
 		Session session;
-		for(int i = 0; i < sessions.length; i++) {
+		for (int i = 0; i < sessions.length; i++) {
 			session = sessions[i];
-			if(session != null) {
+			if (session != null) {
 				msg += session.getSessionName() + ": "
 						+ session.getStartTime() + " - "
 						+ session.getEndTime() + "\n";
 			}
 		}
 		return msg;
-		//"COM1027: 9 - 11\n" + "COM1025: 13 - 14\n" + "COM1026: 15 - 17\n";
 	}
 }
