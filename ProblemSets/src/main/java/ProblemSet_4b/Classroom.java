@@ -19,7 +19,8 @@ public class Classroom {
 		students[index] = new Student(i, s);
 	}
 	public String getSummary() {
-		int num = (int) Arrays.stream(students).filter(e -> e != null).count();
+		int num = (int) Arrays.stream(students).
+				filter(e -> e != null).count();
 		if (num == 0) {
 			return "No students added";
 		}
@@ -31,7 +32,8 @@ public class Classroom {
 		return summary;
 	}
 	public int howManyStudents() {
-		int num = (int) Arrays.stream(students).filter(e -> e != null).count();
+		int num = (int) Arrays.stream(students).
+				filter(e -> e != null).count();
 		System.out.println(num);
 		return num;
 	}
