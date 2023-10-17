@@ -7,4 +7,14 @@ public class Customer {
 		name = n;
 		surname = s;
 	}
+	public char getName() {
+		char output = name.charAt(0);
+		return output;
+	}
+	public String getSurname() {
+		return surname;
+	}
+	public String toString() {
+		return name.substring(0,1) + ". " + surname;
+	}
 }

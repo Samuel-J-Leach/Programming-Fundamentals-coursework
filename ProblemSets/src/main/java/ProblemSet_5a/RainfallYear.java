@@ -2,7 +2,7 @@ package ProblemSet_5a;
 
 public class RainfallYear {
 	private int year;
-	private double rainfallMonths[] = new double[12];
+	private double[] rainfallMonths = new double[12];
 	public RainfallYear(int y) {
 		year = y;
 	}
