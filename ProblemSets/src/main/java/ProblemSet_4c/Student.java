@@ -11,7 +11,7 @@ public class Student {
 	public int calculateYearAverage() {
 		double total = 0;
 		int amount = 0;
-		for (int i=0; i<modules.length; i++) {
+		for (int i = 0; i < modules.length; i++) {
 			if (modules[i] != null) {
 				total += modules[i].getAverage();
 				amount += 1;
