@@ -23,7 +23,7 @@ public class Student {
 	public String displayArray() {
 		String array = "";
 		Module module;
-		for (int i=0; i<modules.length; i++) {
+		for (int i = 0; i < modules.length; i++) {
 			module = modules[i];
 			if (module != null) {
 				array += module.getCode() + ": "
