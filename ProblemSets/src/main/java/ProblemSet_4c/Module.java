@@ -13,4 +13,7 @@ public class Module {
 	public double getAverage() {
 		return average;
 	}
+	public String toString() {
+		return code + ": " + average;
+	}
 }

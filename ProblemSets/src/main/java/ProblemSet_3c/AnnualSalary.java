@@ -12,25 +12,20 @@ public class AnnualSalary {
 	public double calculateTax() {
 		double tax = 0;
 		double tempSalary = salary;
-		final double BASIC = 50270;
-		final double HIGHER = 125140;
-		final double BASIC_RATE = 0.2;
-		final double HIGHER_RATE = 0.4;
-		final double ADDITIONAL_RATE = 0.45;
 		if (salary < PERSONAL_ALLOWANCE) {
 			return 0;
-		} else if (salary < BASIC) {
+		} else if (salary < 50270) {
 			tempSalary -= PERSONAL_ALLOWANCE;
-			tax = tempSalary * BASIC_RATE;
-		} else if (salary < HIGHER) {
-			tempSalary -= BASIC;
-			tax = (BASIC - PERSONAL_ALLOWANCE) * BASIC_RATE;
-			tax += tempSalary * HIGHER_RATE;
+			tax = tempSalary * 0.2;
+		} else if (salary < 125140) {
+			tempSalary -= 50270;
+			tax = (50270 - PERSONAL_ALLOWANCE) * 0.2;
+			tax += tempSalary * 0.4;
 		} else {
-			tempSalary -= HIGHER;
-			tax = (BASIC - PERSONAL_ALLOWANCE) * BASIC_RATE;
-			tax += (HIGHER - BASIC) * HIGHER_RATE;
-			tax += tempSalary * ADDITIONAL_RATE;
+			tempSalary -= 125140;
+			tax = (50270 - PERSONAL_ALLOWANCE) * 0.2;
+			tax += (125140 - 50270) * 0.4;
+			tax += tempSalary * 0.45;
 		}
 		return tax;
 	}
