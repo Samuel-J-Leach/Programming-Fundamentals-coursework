@@ -7,11 +7,11 @@ package ProblemSet_3c;
  */
 
 public class Position {
-	private String roleName;
+	private String role;
 	public String getRoleName() {
-		return roleName;
+		return role;
 	}
-	public void setRoleName(String newRoleName) {
-		roleName = newRoleName;
+	public void setRoleName(String newRole) {
+		role = newRole;
 	}
 }

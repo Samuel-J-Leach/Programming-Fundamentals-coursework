@@ -5,15 +5,15 @@ public class Employee {
 	private String forename;
 	private String surname;
 	private AnnualSalary salary;
-	private Position positionName;
+	private Position companyPosition;
 	public Employee(int pId, String pFn, String pSn,
 			AnnualSalary salary2,
-			Position companyPosition) {
+			Position cPos) {
 		id = pId;
 		forename = pFn;
 		surname = pSn;
 		salary = salary2;
-		positionName = companyPosition;
+		companyPosition = cPos;
 	}
 	public int getId() {
 		return id;
@@ -28,14 +28,20 @@ public class Employee {
 		return salary.getSalary();
 	}
 	public String getPositionName() {
-		return positionName.getRoleName();
+		return companyPosition.getRoleName();
+	}
+	public boolean eligbleForBonus() {
+		if (salary.getSalary() < 100000) {
+			return false;
+		}
+		return true;
 	}
 	public String toString() {
 		String bonus = "";
 		double tempSalary = salary.getSalary();
 		double tax = salary.calculateTax();
-		String roleName = positionName.getRoleName();
-		if (tempSalary < 100000) {
+		String roleName = companyPosition.getRoleName();
+		if (!eligbleForBonus()) {
 			bonus = " not";
 		}
 		String msg = surname + ", " + forename

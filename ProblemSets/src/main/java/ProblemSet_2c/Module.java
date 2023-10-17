@@ -8,6 +8,7 @@ package ProblemSet_2c;
  */
 
 public class Module {
+	private static final String NAME = "COM1027";
 	private Assessment assessment1;
 	private Assessment assessment2;
 	private Assessment assessment3;
@@ -25,6 +26,6 @@ public class Module {
 	}
 	public String toString() {
 		double average = calculateAverage();
-		return "COM1027 (" + average + "%)";
+		return NAME + " (" + average + "%)";
 	}
 }

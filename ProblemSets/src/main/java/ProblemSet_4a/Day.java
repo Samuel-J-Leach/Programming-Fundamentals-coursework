@@ -29,4 +29,8 @@ public class Day {
 		}
 		return msg;
 	}
+	public void display() {
+		System.out.println(name);
+		System.out.println(toString());
+	}
 }
