@@ -37,6 +37,11 @@ public class GasBill {
 			}
 		}
 		return valid;
+		/*
+		 * alternate solution:
+		 * String regex = "G\\d{4}-\\d{4}-\\d{4}";
+		 * return aN.matches(regex);
+		 */
 	}
 	public String displayAccountDetails() {
 		String aN = accountNumber;
