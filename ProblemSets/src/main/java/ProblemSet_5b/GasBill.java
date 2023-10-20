@@ -16,13 +16,40 @@ public class GasBill {
 		return customer.toString();
 	}
 	public boolean checkAccountAccuracy(String aN) {
-		boolean valid = True;
-		if (aN.charAt(0) != "G") {
+		boolean valid = true;
+		if (aN.charAt(0) != 'G') {
 			valid = false;
 		}
 		aN = aN.substring(1);
-		
+		String[] numbers = aN.split("-");
+		if (numbers.length != 3) {
+			valid = false;
+		}
+		for (String i : numbers) {
+			if (i.length() != 4) {
+				valid = false;
+			}
+			try {
+				Integer.parseInt(i);
+			}
+			catch (Exception e) {
+				valid = false;
+			}
+		}
+		return valid;
 	}
-	public String displayAccountDetails() {}
-	public String displayAmountDue() {}
+	public String displayAccountDetails() {
+		String aN = accountNumber;
+		if (!checkAccountAccuracy(accountNumber)) {
+			aN = "Invalid Account";
+		}
+		return "Gas Bill\n"
+				+ " Account Number:" + aN + "\n"
+				+ " Customer:" + customer.getName()
+				+ ". " + customer.getSurname() + "\n" 
+				+ " Amount due:" + displayAmountDue();
+	}
+	public String displayAmountDue() {
+		return "£" + String.format("%.2f", amount);
+	}
 }
