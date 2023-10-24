@@ -4,33 +4,34 @@ public class GasBill {
 	private String accountNumber;
 	private double amount;
 	private Customer customer;
-	public GasBill(String aN, double a, Customer c) {
-		accountNumber = aN;
-		amount = a;
-		customer = c;
+	public GasBill(String accountNumber,
+			double amount, Customer customer) {
+		this.accountNumber = accountNumber;
+		this.amount = amount;
+		this.customer = customer;
 	}
 	public String getAccountNumber() {
-		return accountNumber;
+		return this.accountNumber;
 	}
 	public String getCustomer() {
-		return customer.toString();
+		return this.customer.toString();
 	}
-	public boolean checkAccountAccuracy(String aN) {
+	public boolean checkAccountAccuracy(String accountNumber) {
 		String regex = "G[0-9]{4}-[0-9]{4}-[0-9]{4}";
-		return aN.matches(regex);
+		return accountNumber.matches(regex);
 	}
 	public String displayAccountDetails() {
-		String aN = accountNumber;
+		String accountNumber = this.accountNumber;
 		if (!checkAccountAccuracy(accountNumber)) {
-			aN = "Invalid Account";
+			accountNumber = "Invalid Account";
 		}
 		return "Gas Bill\n"
-				+ " Account Number:" + aN + "\n"
+				+ " Account Number:" + accountNumber + "\n"
 				+ " Customer:" + customer.getName()
 				+ ". " + customer.getSurname() + "\n"
 				+ " Amount due:" + displayAmountDue();
 	}
 	public String displayAmountDue() {
-		return "£" + String.format("%.2f", amount);
+		return "£" + String.format("%.2f", this.amount);
 	}
 }
