@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Pizza {
 	private String[] toppings = new String[10];
-	public Pizza () {
+	public Pizza() {
 		super();
 	}
 	public void addToppings(String[] toppings) {

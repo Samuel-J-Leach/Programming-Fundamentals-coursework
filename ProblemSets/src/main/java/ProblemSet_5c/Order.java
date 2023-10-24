@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Order {
 	private ArrayList<Pizza> pizzas;
 	private Customer customer;
-	public Order (Customer customer) {
+	public Order(Customer customer) {
 		this.customer = customer;
 		this.pizzas = new ArrayList<Pizza>();
 	}
