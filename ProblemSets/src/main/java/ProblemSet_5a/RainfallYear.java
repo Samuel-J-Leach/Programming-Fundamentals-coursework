@@ -67,6 +67,8 @@ public class RainfallYear {
 		case "DECEMBER":
 			rainfall = rainfallMonths[11];
 			break;
+		default:
+			rainfall = 0.0;
 		}
 		return rainfall;
 	}

@@ -15,6 +15,6 @@ public class Customer {
 		return surname;
 	}
 	public String toString() {
-		return name.substring(0,1) + ". " + surname;
+		return name.substring(0, 1) + ". " + surname;
 	}
 }

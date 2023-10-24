@@ -16,27 +16,6 @@ public class GasBill {
 		return customer.toString();
 	}
 	public boolean checkAccountAccuracy(String aN) {
-		/*boolean valid = true;
-		if (aN.charAt(0) != 'G') {
-			valid = false;
-		}
-		aN = aN.substring(1);
-		String[] numbers = aN.split("-");
-		if (numbers.length != 3) {
-			valid = false;
-		}
-		for (String i : numbers) {
-			if (i.length() != 4) {
-				valid = false;
-			}
-			try {
-				Integer.parseInt(i);
-			}
-			catch (Exception e) {
-				valid = false;
-			}
-		}
-		return valid;*/
 		String regex = "G[0-9]{4}-[0-9]{4}-[0-9]{4}";
 		return aN.matches(regex);
 	}
@@ -48,7 +27,7 @@ public class GasBill {
 		return "Gas Bill\n"
 				+ " Account Number:" + aN + "\n"
 				+ " Customer:" + customer.getName()
-				+ ". " + customer.getSurname() + "\n" 
+				+ ". " + customer.getSurname() + "\n"
 				+ " Amount due:" + displayAmountDue();
 	}
 	public String displayAmountDue() {
