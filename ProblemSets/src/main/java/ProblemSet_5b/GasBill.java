@@ -16,7 +16,7 @@ public class GasBill {
 		return customer.toString();
 	}
 	public boolean checkAccountAccuracy(String aN) {
-		boolean valid = true;
+		/*boolean valid = true;
 		if (aN.charAt(0) != 'G') {
 			valid = false;
 		}
@@ -36,12 +36,9 @@ public class GasBill {
 				valid = false;
 			}
 		}
-		return valid;
-		/*
-		 * alternate solution:
-		 * String regex = "G\\d{4}-\\d{4}-\\d{4}";
-		 * return aN.matches(regex);
-		 */
+		return valid;*/
+		String regex = "G[0-9]{4}-[0-9]{4}-[0-9]{4}";
+		return aN.matches(regex);
 	}
 	public String displayAccountDetails() {
 		String aN = accountNumber;
