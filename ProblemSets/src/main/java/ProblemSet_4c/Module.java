@@ -3,17 +3,18 @@ package ProblemSet_4c;
 public class Module {
 	private String code;
 	private double average;
-	public Module(String c, double a) {
-		code = c;
-		average = a;
+	public Module(String code, double average) {
+		this.code = code;
+		this.average = average;
 	}
 	public String getCode() {
-		return code;
+		return this.code;
 	}
 	public double getAverage() {
-		return average;
+		return this.average;
 	}
+	@Override
 	public String toString() {
-		return code + ": " + average;
+		return this.code + ": " + this.average;
 	}
 }

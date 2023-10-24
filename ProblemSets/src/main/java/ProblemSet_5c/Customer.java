@@ -3,18 +3,23 @@ package ProblemSet_5c;
 public class Customer {
 	private String name;
 	private String surname;
-	public Customer(String n, String s) {
-		name = n;
-		surname = s;
+	public Customer(String name, String surname) {
+		this.name = name;
+		this.surname = surname;
 	}
 	public char getName() {
-		char output = name.charAt(0);
+		char output = this.name.charAt(0);
 		return output;
 	}
 	public String getSurname() {
-		return surname;
+		return this.surname;
 	}
+	@Override
 	public String toString() {
-		return name.substring(0, 1) + ". " + surname;
+		StringBuffer str = new StringBuffer();
+		str.append(this.name.substring(0, 1));
+		str.append(". ");
+		str.append(this.surname);
+		return str.toString();
 	}
 }
