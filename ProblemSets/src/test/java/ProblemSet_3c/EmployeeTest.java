@@ -4,9 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import ProblemSet_3a.Position;
-import ProblemSet_3b.AnnualSalary;
-
 /**
  * A simple class used to test the "Employee" class.
  *
