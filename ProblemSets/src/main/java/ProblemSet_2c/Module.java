@@ -24,6 +24,7 @@ public class Module {
 		average += (assessment3.getMark()) * 0.6;
 		return average;
 	}
+	@Override
 	public String toString() {
 		double average = calculateAverage();
 		return NAME + " (" + average + "%)";

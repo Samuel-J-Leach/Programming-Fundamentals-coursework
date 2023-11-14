@@ -3,9 +3,10 @@ package ProblemSet_5c;
 import java.util.Arrays;
 
 public class Pizza {
-	private String[] toppings = new String[10];
+	private String[] toppings = null;
 	public Pizza() {
 		super();
+		this.toppings = new String[10];
 	}
 	public void addToppings(String[] toppings) {
 		this.toppings = toppings;
