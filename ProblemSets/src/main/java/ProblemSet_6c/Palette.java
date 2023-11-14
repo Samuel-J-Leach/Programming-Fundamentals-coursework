@@ -88,7 +88,7 @@ public class Palette {
 		for (int i = 0; i < size; i++) {
 			if (this.primaryColours[i] != null) {
 				colours.append(this.primaryColours[i].toString());
-				if (this.primaryColours[i+1] != null) {
+				if (this.primaryColours[i + 1] != null) {
 					colours.append(", ");
 				}
 			}
