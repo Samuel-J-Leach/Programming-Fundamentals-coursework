@@ -4,20 +4,27 @@ import java.util.Arrays;
 
 public class Palette {
 	private P_COLOUR[] primaryColours = null;
-	public Palette(P_COLOUR[] primaryColours) {
-		this.primaryColours = primaryColours;
+	public Palette(P_COLOUR[] primaryColours) throws IllegalArgumentException {
+		if (primaryColours.length > 3) {
+			throw new IllegalArgumentException();
+		}
+		this.primaryColours = new P_COLOUR[3];
+		for (int i = 0; i < primaryColours.length; i++) {
+			this.primaryColours[i] = primaryColours[i];
+		}
 	}
 	public Palette() {
 		super();
 		this.primaryColours = new P_COLOUR[3];
 	}
 	public void addColour(P_COLOUR colour) throws IllegalArgumentException {
-		int length = this.primaryColours.length;
-		for (int i = 0; i < length; i++) {
+		for (int i = 0; i < 3; i++) {
 			if (this.primaryColours[i] == null) {
 				this.primaryColours[i] = colour;
 				colour = null;
-			} else if {}
+			} else if (this.primaryColours[i] == colour) {
+				throw new IllegalArgumentException();
+			}
 		}
 		if (colour != null) {
 			throw new IllegalArgumentException();
@@ -39,10 +46,14 @@ public class Palette {
 	}
 	public String mixColours() {
 		String newColour = "";
-		P_COLOUR[] colours = (P_COLOUR[]) Arrays
+		int length = (int) Arrays
 				.stream(this.primaryColours)
 				.filter(e -> e != null)
-				.toArray();
+				.count();
+		P_COLOUR[] colours = new P_COLOUR[length];
+		for (int i = 0; i < length; i++) {
+			colours[i] = this.primaryColours[i];
+		}
 		P_COLOUR[] rb = new P_COLOUR[]
 				{P_COLOUR.RED, P_COLOUR.BLUE};
 		P_COLOUR[] br = new P_COLOUR[]
@@ -72,7 +83,7 @@ public class Palette {
 		return newColour;
 	}
 	public String display() {
-		StringBuffer colours = null;
+		StringBuffer colours = new StringBuffer();
 		int size = this.primaryColours.length;
 		for (int i = 0; i < size; i++) {
 			if (this.primaryColours[i] != null) {
