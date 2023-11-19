@@ -16,6 +16,7 @@ public class PersonTracker {
 			throw new NullPointerException();
 		}
 		int counter = 0;
+		String[] values = new String[3];
 		StringBuffer text = new StringBuffer();
 		try {
 			FileReader fileReader = new FileReader(file);
@@ -25,7 +26,12 @@ public class PersonTracker {
 				line = bFileReader.readLine();
 				if (line != null) {
 					counter ++;
-					//format line info
+					values = breakLine(line);
+					this.addPerson(values[0], values[1], Integer.parseInt(values[2]));
+					text.append(line);
+					text.append(" : ");
+					text.append(counter);
+					text.append("\n");
 				}
 			}
 			bFileReader.close();
@@ -35,9 +41,21 @@ public class PersonTracker {
 		}
 		return text.toString();
 	}
-	public void addPerson(String n, String s, int a) {}
-	public String displayList() {}
-	private void breakLine(String line) {}
+	public void addPerson(String n, String s, int a) {
+		this.peopleList.add(new Person(n, s, a));
+	}
+	public String displayList() {
+		StringBuffer list = new StringBuffer();
+		for (Person person : this.peopleList) {
+			list.append(person.toString());
+			list.append("\n");
+		}
+		return list.toString();
+	}
+	private String[] breakLine(String line) {
+		String[] values = line.split(" ");
+		return values;
+	}
 	public String getPeopleList() {
 		StringBuffer list = new StringBuffer();
 		list.append("[");
