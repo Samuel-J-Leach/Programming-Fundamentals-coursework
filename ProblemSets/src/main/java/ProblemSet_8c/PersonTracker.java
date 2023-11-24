@@ -29,7 +29,7 @@ public class PersonTracker {
 					counter++;
 					values = breakLine(line);
 					this.addPerson(values[0], values[1],
-							Integer.parseInt(values[2]));
+						Integer.parseInt(values[2]));
 					text.append(line);
 					text.append(" : ");
 					text.append(counter);
