@@ -28,7 +28,7 @@ public class Guest implements IGuest {
 	public String getTelephone() {
 		return this.telephone;
 	}
-	public List<Charge> getCharges(){
+	public List<Charge> getCharges() {
 		return this.charges;
 	}
 	public void addCharge(Service s, double c) {

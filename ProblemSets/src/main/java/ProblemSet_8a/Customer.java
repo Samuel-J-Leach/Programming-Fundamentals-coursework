@@ -3,9 +3,10 @@ package ProblemSet_8a;
 public class Customer {
 	private String name;
 	private String surname;
-	public Customer(String name, String surname) throws IllegalArgumentException {
-		if (this.validateInfo(name) &&
-				this.validateInfo(surname)) {
+	public Customer(String name, String surname)
+			throws IllegalArgumentException {
+		if (this.validateInfo(name)
+				&& this.validateInfo(surname)) {
 			this.name = name;
 			this.surname = surname;
 		} else {

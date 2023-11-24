@@ -7,7 +7,8 @@ public class Student {
 	private String name;
 	private String urn;
 	private List<Module> moduleList;
-	public Student(String name, String urn) throws IllegalArgumentException {
+	public Student(String name, String urn)
+			throws IllegalArgumentException {
 		if (name.matches("[A-Z]{1}[a-z]*( )[A-Z]{1}[a-z]*")) {
 			this.name = name;
 		} else {

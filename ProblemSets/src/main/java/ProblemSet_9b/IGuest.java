@@ -1,10 +1,10 @@
 package ProblemSet_9b;
 
 public interface IGuest {
-	public void addCharge(Service s, double c);
-	public double calculateTotalChargeWithoutVAT();
-	public double calculateVATChargeAtRate(VATRate r);
-	public double calculateTotalChargeIncVat();
+	void addCharge(Service s, double c);
+	double calculateTotalChargeWithoutVAT();
+	double calculateVATChargeAtRate(VATRate r);
+	double calculateTotalChargeIncVat();
 	@Override
-	public String toString();
+	String toString();
 }

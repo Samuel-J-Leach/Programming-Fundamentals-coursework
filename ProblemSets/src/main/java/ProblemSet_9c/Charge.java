@@ -3,7 +3,8 @@ package ProblemSet_9c;
 public class Charge {
 	private Service service;
 	private double charge;
-	public Charge(Service service, double charge) throws IllegalArgumentException {
+	public Charge(Service service, double charge)
+			throws IllegalArgumentException {
 		this.service = service;
 		if (charge > 0) {
 			this.charge = charge;
