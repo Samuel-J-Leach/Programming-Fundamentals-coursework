@@ -1,8 +1,11 @@
 package ProblemSet_9b;
 
+/*Charge class stores a Service object and a monetary charge and can calculate the VAT*/
 public class Charge {
 	private Service service;
 	private double charge;
+	/*parameterised constructor, raises an
+	 * exception if charge is less than 0*/
 	public Charge(Service service, double charge)
 			throws IllegalArgumentException {
 		this.service = service;
@@ -12,12 +15,16 @@ public class Charge {
 			throw new IllegalArgumentException();
 		}
 	}
+	/*returns the service attribute*/
 	public Service getService() {
 		return this.service;
 	}
+	/*returns the charge attribute*/
 	public double getCharge() {
 		return this.charge;
 	}
+	/*calculates the VAT to be paid based
+	 * on the amount being charged*/
 	public double calculateVAT() {
 		double vat = 0;
 		switch (service.getRate()) {
