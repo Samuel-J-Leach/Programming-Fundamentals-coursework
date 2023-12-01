@@ -7,15 +7,15 @@ import java.util.List;
  * surname, address, phone number, and a
  * list of charges to be paid*/
 public class Guest implements IGuest {
-	/**the guest's first name*/
+	/**the guest's first name.*/
 	private String forename;
-	/**the guest's second name*/
+	/**the guest's second name.*/
 	private String surname;
-	/**the guest's address*/
+	/**the guest's address.*/
 	private String address;
-	/**the guest's phone number*/
+	/**the guest's phone number.*/
 	private String telephone;
-	/**the list of charges the guest is to pay for*/
+	/**the list of charges the guest is to pay for.*/
 	private List<Charge> charges;
 	/*parameterized constructor with no validation*/
 	public Guest(String f, String s, String a, String t) {
@@ -47,7 +47,10 @@ public class Guest implements IGuest {
 		return this.charges;
 	}
 	/**creates a new Charge object and inserts
-	 * it into the end of charges*/
+	 * it into the end of charges.
+	 * @param - s
+	 * @param - c
+	 */
 	public void addCharge(Service s, double c) {
 		this.charges.add(new Charge(s, c));
 	}

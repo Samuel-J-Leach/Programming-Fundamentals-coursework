@@ -6,9 +6,9 @@ import java.util.List;
 /*Hotel class stores the hotel name
  * and list of guests*/
 public class Hotel {
-	/**the name of the hotel*/
+	/**the name of the hotel.*/
 	private String name;
-	/**the list of guests staying at the hotel*/
+	/**the list of guests staying at the hotel.*/
 	private List<IGuest> guests;
 	/*parameterized constructor
 	 * with no validation*/

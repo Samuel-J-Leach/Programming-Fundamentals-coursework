@@ -3,9 +3,9 @@ package ProblemSet_9c;
 /*Charge class stores a Service object and
  * a monetary charge and can calculate the VAT*/
 public class Charge {
-	/**stores a Service object*/
+	/**stores a Service object.*/
 	private Service service;
-	/**stores the price of the service*/
+	/**stores the price of the service.*/
 	private double charge;
 	/*parameterised constructor, raises an
 	 * exception if charge is less than 0*/
@@ -28,7 +28,8 @@ public class Charge {
 	}
 	/**
 	 * calculates the VAT to be paid based
-	 * on the amount being charged
+	 * on the amount being charged.
+	 * @return vat
 	 */
 	public double calculateVAT() {
 		double vat = 0;
