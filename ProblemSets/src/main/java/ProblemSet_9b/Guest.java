@@ -7,10 +7,15 @@ import java.util.List;
  * surname, address, phone number, and a
  * list of charges to be paid*/
 public class Guest implements IGuest {
+	/**the guest's first name*/
 	private String forename;
+	/**the guest's second name*/
 	private String surname;
+	/**the guest's address*/
 	private String address;
+	/**the guest's phone number*/
 	private String telephone;
+	/**the list of charges the guest is to pay for*/
 	private List<Charge> charges;
 	/*parameterized constructor with no validation*/
 	public Guest(String f, String s, String a, String t) {
@@ -41,7 +46,7 @@ public class Guest implements IGuest {
 	public List<Charge> getCharges() {
 		return this.charges;
 	}
-	/*creates a new Charge object and inserts
+	/**creates a new Charge object and inserts
 	 * it into the end of charges*/
 	public void addCharge(Service s, double c) {
 		this.charges.add(new Charge(s, c));
@@ -59,24 +64,11 @@ public class Guest implements IGuest {
 	 * paid from charges at a given rate*/
 	public double calculateVATChargeAtRate(VATRate r) {
 		double total = 0;
-		double vat = 0;
-		switch (r) {
-		case ZERO:
-			break;
-		case LOW:
-			vat = 0.05;
-			break;
-		case STANDARD:
-			vat = 0.2;
-			break;
-		default:
-			break;
-		}
 		/*loops through every charge and adds the
 		 * VAT to be paid to the total*/
 		for (Charge charge : this.charges) {
 			if (charge.getService().getRate() == r) {
-				total += charge.getCharge() * vat;
+				total += charge.calculateVAT();
 			}
 		}
 		return total;

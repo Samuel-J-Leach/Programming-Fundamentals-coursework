@@ -2,7 +2,9 @@ package ProblemSet_9c;
 
 /*Charge class stores a Service object and a monetary charge and can calculate the VAT*/
 public class Charge {
+	/**stores a Service object*/
 	private Service service;
+	/**stores the price of the service*/
 	private double charge;
 	/*parameterised constructor, raises an
 	 * exception if charge is less than 0*/
@@ -23,17 +25,19 @@ public class Charge {
 	public double getCharge() {
 		return this.charge;
 	}
-	/*calculates the VAT to be paid based
-	 * on the amount being charged*/
+	/**
+	 * calculates the VAT to be paid based
+	 * on the amount being charged
+	 */
 	public double calculateVAT() {
 		double vat = 0;
 		switch (service.getRate()) {
-		case ZERO:
+		case ZERO: //no VAT
 			break;
-		case LOW:
+		case LOW: //low VAT rate is 5%
 			vat = this.charge * 0.05;
 			break;
-		case STANDARD:
+		case STANDARD: //standard VAT rate is 20%
 			vat = this.charge * 0.2;
 			break;
 		default:
