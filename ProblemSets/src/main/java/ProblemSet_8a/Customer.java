@@ -8,7 +8,7 @@ public class Customer {
 	private String surname;
 	/*Customer object can only be created if the name
 	 * and surname start with a capital letter which is
-	 * followed by 0 or more lower case letters, else 
+	 * followed by 0 or more lower case letters, else
 	 * an exception is raised.*/
 	public Customer(String name, String surname)
 			throws IllegalArgumentException {

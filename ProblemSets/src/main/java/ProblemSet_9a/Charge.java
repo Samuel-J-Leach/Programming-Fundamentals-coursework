@@ -1,6 +1,7 @@
 package ProblemSet_9a;
 
-/*Charge class stores a Service object and a monetary charge and can calculate the VAT*/
+/*Charge class stores a Service object and
+ * a monetary charge and can calculate the VAT*/
 public class Charge {
 	private Service service;
 	private double charge;
