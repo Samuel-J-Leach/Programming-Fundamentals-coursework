@@ -48,8 +48,8 @@ public class Guest implements IGuest {
 	}
 	/**creates a new Charge object and inserts
 	 * it into the end of charges.
-	 * @param - s
-	 * @param - c
+	 * @param s
+	 * @param c
 	 */
 	public void addCharge(Service s, double c) {
 		this.charges.add(new Charge(s, c));
