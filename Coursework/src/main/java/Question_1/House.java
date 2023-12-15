@@ -12,11 +12,9 @@ public class House {
 	private Map<Room, ITenant> rooms = null;
 	public House(int h, String s, String c, String p, int n) {
 		super();
-		String postCodeRegex = "(GU)[0-9]{1}( ){0,1}[0-9]{1}[A-Z]{2}";
-		String cityRegex = "[A-Z]{1}[a-z]*";
 		if (h == 0 || s == null || c == null || p == null || n == 0) {
 			throw new NullPointerException();
-		} else if (!p.matches(postCodeRegex) || !c.matches(cityRegex)) {
+		} else if (!this.validatePostCode(p) || !this.validateCity(c)) {
 			throw new IllegalArgumentException();
 		} else {
 			this.houseNumber = h;
@@ -28,7 +26,11 @@ public class House {
 		}
 	}
 	public int getAvailableRooms() {
-		return this.numberOfRooms;
+		int emptyRooms = this.numberOfRooms;
+		for (Map.Entry<Room, ITenant> room : this.rooms.entrySet()) {
+			emptyRooms -= 1;
+		}
+		return emptyRooms;
 	}
 	public double getPrice() {
 		double price = 0.0;
@@ -36,5 +38,52 @@ public class House {
 			price += room.getKey().getPrice();
 		}
 		return price;
+	}
+	public boolean isAvailable() {
+		boolean available = true;
+		if (this.getAvailableRooms() == 0) {
+			available = false;
+		}
+		return available;
+	}
+	public void occupy(Room r, ITenant t) {
+		if (this.isAvailable()) {
+			this.rooms.put(r, t);
+		} else {
+			throw new IllegalArgumentException("house not available");
+		}
+	}
+	@Override
+	public String toString() {
+		StringBuffer output = new StringBuffer();
+		output.append(this.houseNumber);
+		output.append(" ");
+		output.append(this.street);
+		output.append(", ");
+		output.append(this.city);
+		output.append(" ");
+		output.append(this.postCode);
+		output.append(" (");
+		output.append(this.numberOfRooms);
+		output.append(" bedroom house :");
+		output.append(this.getAvailableRooms());
+		output.append(" available)");
+		return output.toString();
+	}
+	private boolean validateCity(String input) {
+		String regex = "[A-Z]{1}[a-z]*";
+		boolean valid = false;
+		if (input.matches(regex)) {
+			valid = true;
+		}
+		return valid;
+	}
+	private boolean validatePostCode(String input) {
+		String regex = "(GU)[0-9]{1}( ){0,1}[0-9]{1}[A-Z]{2}";
+		boolean valid = false;
+		if (input.matches(regex)) {
+			valid = true;
+		}
+		return valid;
 	}
 }
