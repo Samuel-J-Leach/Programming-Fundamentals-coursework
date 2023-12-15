@@ -26,11 +26,7 @@ public class House {
 		}
 	}
 	public int getAvailableRooms() {
-		int emptyRooms = this.numberOfRooms;
-		for (Map.Entry<Room, ITenant> room : this.rooms.entrySet()) {
-			emptyRooms -= 1;
-		}
-		return emptyRooms;
+		return this.numberOfRooms - this.rooms.size();
 	}
 	public double getPrice() {
 		double price = 0.0;
@@ -50,7 +46,7 @@ public class House {
 		if (this.isAvailable()) {
 			this.rooms.put(r, t);
 		} else {
-			throw new IllegalArgumentException("house not available");
+			throw new IllegalArgumentException();
 		}
 	}
 	@Override

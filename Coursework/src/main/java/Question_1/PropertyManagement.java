@@ -36,7 +36,7 @@ public class PropertyManagement {
 				 * house with their room*/
 				try {
 					house.occupy(r, t);
-				} catch(IllegalArgumentException e) {
+				} catch (IllegalArgumentException e) {
 					/*house is not available*/
 					throw e;
 				}
@@ -45,15 +45,18 @@ public class PropertyManagement {
 		}
 		if (!validHouse) {
 			/*p was not in the property list*/
-			throw new IllegalArgumentException
-			("house not in property management list");
+			throw new IllegalArgumentException();
 		}
 	}
-	/**returns the toString output of every
-	 * house in the property list*/
+	/**returns the toString value of every
+	 * house in the property list.
+	 * @return output.toString()
+	 * */
 	public String displayProperties() {
 		StringBuffer output = new StringBuffer();
+		/*iterates through every property*/
 		for (House house : this.properties) {
+			/*adds toString() value to output*/
 			output.append(house.toString());
 			output.append("\n");
 		}
@@ -78,8 +81,7 @@ public class PropertyManagement {
 		}
 		if (!validHouse) {
 			/*p was not in the property list*/
-			throw new IllegalArgumentException
-			("house not in property management list");
+			throw new IllegalArgumentException();
 		}
 	}
 }
