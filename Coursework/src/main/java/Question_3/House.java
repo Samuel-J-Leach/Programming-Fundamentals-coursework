@@ -1,17 +1,10 @@
-package Question_2;
+package Question_3;
 
 import java.util.Map;
 
-public class Flat extends Property {
-	private static final double MAINTENANCE_COSTS = 500.0;
-	private int floor = 0;
-	public Flat(int h, String s, String c, String p, int n, int f) {
+public class House extends Property {
+	public House(int h, String s, String c, String p, int n) {
 		super(h, s, c, p, n);
-		if (f > 0) {
-			this.floor = f;
-		} else {
-			throw new IllegalArgumentException();
-		}
 	}
 	@Override
 	public double getPrice() {
@@ -19,21 +12,22 @@ public class Flat extends Property {
 		for (Map.Entry<Room, ITenant> room : this.rooms.entrySet()) {
 			price += room.getKey().getPrice() * 12;
 		}
-		return price + Flat.MAINTENANCE_COSTS;
+		return price;
 	}
 	@Override
 	public boolean isAvailable() {
 		boolean available = true;
-		if (this.rooms.size() > 0) {
+		if (this.getAvailableRooms() == 0) {
 			available = false;
 		}
 		return available;
 	}
 	@Override
 	public void occupy(Room r, ITenant t) {
-		if (this.isAvailable()
-				&& t.getType() == TenantType.PROFESSIONAL) {
+		if (this.isAvailable()) {
 			this.rooms.put(r, t);
+		} else {
+			throw new IllegalArgumentException();
 		}
 	}
 	@Override
@@ -69,9 +63,7 @@ public class Flat extends Property {
 		output.append(this.getPostCode());
 		output.append(" (");
 		output.append(this.getNumberOfRooms());
-		output.append(" bedroom flat on ");
-		output.append(this.floor);
-		output.append(" floor :");
+		output.append(" bedroom house :");
 		output.append(this.getAvailableRooms());
 		output.append(" available)");
 		return output.toString();
