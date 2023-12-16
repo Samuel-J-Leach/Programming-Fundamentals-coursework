@@ -62,7 +62,7 @@ public class PropertyManagement {
 		for (Property p : this.properties) {
 			if (problematic == null
 					|| p.calculateImpact()
-						> problematic.calculateImpact()) {
+					> problematic.calculateImpact()) {
 				problematic = p;
 			}
 		}
