@@ -87,7 +87,8 @@ public class PropertyManagement {
 	public int numberOfPropertyType(String type) {
 		int count = 0;
 		for (Property property : this.properties) {
-			if (type.equals(property.getClass().getSimpleName().toLowerCase())) {
+			if (type.equals(property
+					.getClass().getSimpleName().toLowerCase())) {
 				count++;
 			}
 		}

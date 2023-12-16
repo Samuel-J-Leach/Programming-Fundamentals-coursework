@@ -54,7 +54,8 @@ public abstract class Property {
 		for (Map.Entry<Room, ITenant> room : this.rooms.entrySet()) {
 			if (room.getValue().getType() == TenantType.STUDENT) {
 				students++;
-			} else if (room.getValue().getType() == TenantType.PROFESSIONAL) {
+			} else if (room.getValue().getType()
+					== TenantType.PROFESSIONAL) {
 				professionals++;
 			}
 		}
@@ -69,7 +70,6 @@ public abstract class Property {
 			councilTax = tax;
 		}
 		this.councilTax = councilTax;
-		
 	}
 	@Override
 	public String toString() {

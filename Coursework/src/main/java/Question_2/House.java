@@ -35,13 +35,15 @@ public class House extends Property {
 		StringBuffer output = new StringBuffer();
 		output.append(this.toString());
 		if (!this.isAvailable()) {
-			for (Map.Entry<Room, ITenant> room : this.rooms.entrySet()) {
+			for (Map.Entry<Room, ITenant> room
+					: this.rooms.entrySet()) {
 				output.append("\n\tRoom: ");
 				output.append(room.getKey().getPrice());
 			}
 			if (this.rooms.size() > 0) {
 				output.append("\n	Total: £");
-				output.append(String.format("%.02f", this.getPrice()));
+				output.append(String
+						.format("%.02f", this.getPrice()));
 				output.append(" (Council Tax: £");
 				output.append(this.councilTax);
 				output.append(")");
