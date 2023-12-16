@@ -88,7 +88,7 @@ public class PropertyManagement {
 		int count = 0;
 		for (Property property : this.properties) {
 			if (type.equals(property
-					.getClass().getSimpleName().toLowerCase())) {
+				.getClass().getSimpleName().toLowerCase())) {
 				count++;
 			}
 		}

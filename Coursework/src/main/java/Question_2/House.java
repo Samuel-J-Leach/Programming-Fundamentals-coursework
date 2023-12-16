@@ -43,7 +43,7 @@ public class House extends Property {
 			if (this.rooms.size() > 0) {
 				output.append("\n	Total: £");
 				output.append(String
-						.format("%.02f", this.getPrice()));
+					.format("%.02f", this.getPrice()));
 				output.append(" (Council Tax: £");
 				output.append(this.councilTax);
 				output.append(")");
