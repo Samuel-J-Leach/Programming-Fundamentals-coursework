@@ -17,9 +17,9 @@ public class Flat extends Property {
 	public double getPrice() {
 		double price = 0.0;
 		for (Map.Entry<Room, ITenant> room : this.rooms.entrySet()) {
-			price += room.getKey().getPrice() * 12;
+			price += room.getKey().getPrice();
 		}
-		return price + Flat.MAINTENANCE_COSTS;
+		return price;
 	}
 	@Override
 	public boolean isAvailable() {
@@ -49,7 +49,8 @@ public class Flat extends Property {
 			if (this.rooms.size() > 0) {
 				output.append("\n	Total: £");
 				output.append(String
-					.format("%.02f", this.getPrice()));
+					.format("%.02f", (this.getPrice() * 12)
+							+ Flat.MAINTENANCE_COSTS));
 				output.append(" (Council Tax: £");
 				output.append(this.councilTax);
 				output.append(")");
